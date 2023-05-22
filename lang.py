@@ -110,7 +110,7 @@ class LangLearner:
             return input(f'\nEnter the name of the category intended for {intention}\n')
 
         def add_category():
-            adjust_collection(cats.keys(), io_searcher, lambda cat : cats.update({ cat : {} }), intention = 'creation')
+            adjust_collection(cats.keys(), io_searcher, lambda cat : cats.update({ cat : set() }), intention = 'creation')
             self.main_menu()
 
         def remove_category():
