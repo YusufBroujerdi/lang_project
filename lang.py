@@ -1,6 +1,7 @@
 import pickle
 import ui
 from typing import Callable
+import random
 
 
 def adjust_collection(collection, io_searcher : Callable, adjuster : Callable, intention : str = 'deletion'):
@@ -22,7 +23,7 @@ def guess_words(collection : set, reverse_translation : bool = False):
 
     collection = {WordPair(word_pair.span, word_pair.eng) for word_pair in collection} if reverse_translation else collection
     
-    for word_pair in collection:
+    for word_pair in random.shuffle(collection):
 
         word_guess = input(f'\nTranslate the word {word_pair.eng} (or enter 1 to skip or 0 to exit):\n')
 
