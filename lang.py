@@ -40,7 +40,7 @@ def guess_words(collection : set, reverse_translation : bool = False):
                 break
 
             case _:
-                print('\nIncorrect. Correct word was {word_pair.span}.')
+                print(f'\nIncorrect. Correct word was {word_pair.span}.')
                 incorrectly_guessed_word_pairs.add(word_pair)
     
     print(f'Percentage guessed correctly: {(len(cg)*100)/(len(cg)+len(ig)+len(sg))}%')
