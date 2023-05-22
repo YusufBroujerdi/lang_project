@@ -142,8 +142,8 @@ class LangLearner:
 
         def io_searcher(intention : str):
 
-            eng = input(f'\nEnter the spanish word of the pair intended for {intention}\n')
-            span = input(f'\nEnter the english word of the pair intended for {intention}\n')
+            span = input(f'\nEnter the spanish word of the pair intended for {intention}\n')
+            eng = input(f'\nEnter the english word of the pair intended for {intention}\n')
             return WordPair(eng, span)
 
 
