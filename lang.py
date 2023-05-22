@@ -91,24 +91,15 @@ class LangLearner:
 
         print('Welcome to lang-learner.')
 
-        self.word_sets = {'household furniture' : {WordPair('oven', 'el horno'), WordPair('toilet', 'el inodoro'), WordPair('shelf', 'el estante') \
-                                                   , WordPair('floor', 'el piso'), WordPair('rug', 'el tapete')} ,
-                          'academia' : {WordPair('word', 'la palabra'), WordPair('homework', 'la tarea'), WordPair('lesson', 'la clase')}
-        }
-
-        # with open('data.txt') as saved_data:
-        #     self.word_sets = saved_data
-        # saved_data.close()
+        with open('data.txt', 'rb') as saved_data:
+            self.word_sets = pickle.load(saved_data)
 
         self.main_menu()
     
     def __del__(self):
 
-        pass
-
-        # with open('data.txt') as saved_data:
-        #     saved_data.write(json.dumps(self.word_sets))
-        # saved_data.close()
+        with open('data.txt', 'wb') as saved_data:
+            pickle.dump(self.word_sets, saved_data, pickle.HIGHEST_PROTOCOL)
 
 
 
