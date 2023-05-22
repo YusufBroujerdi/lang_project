@@ -23,7 +23,7 @@ def guess_words(collection : set, reverse_translation : bool = False):
 
     collection = {WordPair(word_pair.span, word_pair.eng) for word_pair in collection} if reverse_translation else collection
     
-    for word_pair in random.shuffle(collection):
+    for word_pair in random.shuffle(list(collection)):
 
         word_guess = input(f'\nTranslate the word {word_pair.eng} (or enter 1 to skip or 0 to exit):\n')
 
