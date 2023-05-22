@@ -43,7 +43,7 @@ def guess_words(collection : set, reverse_translation : bool = False):
                 print(f'\nIncorrect. Correct word was {word_pair.span}.')
                 incorrectly_guessed_word_pairs.add(word_pair)
     
-    print(f'Percentage guessed correctly: {(len(cg)*100)/(len(cg)+len(ig)+len(sg))}%')
+    print(f'\nPercentage guessed correctly: {(len(cg)*100)/(len(cg)+len(ig)+len(sg))}%')
     print(f'Percentage guessed incorrectly: {(len(ig)*100)/(len(cg)+len(ig)+len(sg))}%')
     print(f'Percentage skipped: {(len(sg)*100)/(len(cg)+len(ig)+len(sg))}%')
     
@@ -123,7 +123,7 @@ class LangLearner:
         menu_items = [ui.Item(cat, f'navigate to category "{cat}"', lambda cat = cat: self.navigate_category(cat)) for cat in cats.keys()]
         menu_items += [ui.Item(1, 'add a new category', add_category),
                       ui.Item(2, 'remove a category', remove_category),
-                      ui.Item(0, 'exit', lambda: print('\nSaving and exiting...'))]
+                      ui.Item(0, 'exit', lambda: print('\nSaving and exiting...\n'))]
 
         final_menu : Callable = ui.generate_menu(menu_items)
         final_menu()
