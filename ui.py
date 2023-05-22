@@ -16,7 +16,7 @@ class Item:
 
 def generate_menu(ui_object : list) -> Callable:
 
-    menu_options = [f'Enter {item.option} to {item.description}.\n' for item in ui_object]
+    menu_options = [f'Enter "{item.option}" to {item.description}.\n' for item in ui_object]
 
     def menu():
         
